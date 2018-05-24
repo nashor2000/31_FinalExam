@@ -2,7 +2,7 @@
 Final exam, problem 3.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, their colleagues,
-         and PUT_YOUR_NAME_HERE.
+         and Xuechen Bai.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
@@ -87,6 +87,22 @@ And this one for n=14:
     #   print Xs for the spaces until you figure out where the problem is
     #   (and then change the Xs back to spaces).
     # ------------------------------------------------------------------
+    for k in range(n):
+        for a in range(n - k):
+            print(" ", end="")
+        for b in range(1, k + 2):
+            if b < 10:
+                print(b, end="")
+            if b >= 10:
+                print(b - 10, end="")
+        for c in range(2 + k):
+            print("*", end="")
+        for b in range(n - k, 0, -1):
+            if b < 10:
+                print(b, end="")
+            if b >= 10:
+                print(b - 10, end="")
+        print(" ")
 
 
 # ----------------------------------------------------------------------

@@ -72,7 +72,7 @@ def sum_of_digits(number):
         if number == 0:
             break
         digit_sum = digit_sum + (number % 10)
-        number = number // 10
+        number = number//10
 
     return digit_sum
     # ------------------------------------------------------------------
@@ -171,7 +171,7 @@ def problem2a(x, sequence):
       :type sequence:  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     a = []
@@ -257,9 +257,16 @@ def problem2b(sequence):
       :type sequence  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    #Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    a = 0
+    for k in range(len(sequence)):
+        if sequence[k] < 0:
+            sequence[k] = -sequence[k]
+        if sequence[a] < sequence[k]:
+            a = k
+    return a
 
 
 def run_test_problem2c():
@@ -400,9 +407,15 @@ def problem2c(x):
       :type x:    int
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    while True:
+        if is_prime(x) is True:
+            if is_prime(sum_of_digits(x)) is True:
+                return x
+        x = x + 1
+
 
 
 ###############################################################################
